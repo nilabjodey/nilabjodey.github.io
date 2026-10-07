@@ -1,269 +1,699 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Nilabjo Dey</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nilabjo Dey</title>
+<meta name="description" content="Nilabjo Dey is a software engineer building vector search inside Oracle Database. Work, research and contact.">
+<meta property="og:title" content="Nilabjo Dey">
+<meta property="og:description" content="Software engineer on Oracle AI Vector Search.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nilabjodey.github.io/">
+<meta name="theme-color" content="#161514">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 28'%3E%3Crect width='20' height='28' rx='3' fill='%231d1d1c'/%3E%3Crect y='13.5' width='20' height='1' fill='%23000'/%3E%3Ctext x='10' y='20.5' font-family='Arial' font-weight='700' font-size='16' fill='%23f1ede4' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Barlow:wght@400;500&display=swap">
+<style>
+/* Layout: a 6×22 split-flap board is the headline; five keys flip it between sections, and a
+   timetable-style detail panel beneath carries the full story for that section. Single-theme by design. */
+:root {
+  color-scheme: dark;
+  --wall: #161514;
+  --housing: #0b0b0b;
+  --flap: #1d1d1c;
+  --flap-lo: #181817;
+  --ink: #f1ede4;
+  --muted: #8f8a80;
+  --line: rgba(241, 237, 228, 0.12);
+  --line-strong: rgba(241, 237, 228, 0.28);
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+  /* Vestaboard color tiles: the only accents */
+  --red: #d7392f;
+  --orange: #f0782c;
+  --yellow: #fcbc19;
+  --green: #12a05c;
+  --blue: #1b7fc4;
+  --violet: #7a4bb0;
+  --white: #f3f1ea;
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Nilabjo Dey</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+  --flapface: "Barlow Semi Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+}
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#Education">Education</a></li>
-								<li><a href="#Experience">Experience</a></li>
-								<li><a href="#Research & Publications">Research & Publications</a></li>
-								<li><a href="#Technical Skills">Technical Skills</a></li>
-								<li><a href="#footer">Contact</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(ellipse 90% 50% at 50% 20%, #1d1c1a, var(--wall) 70%);
+  background-color: var(--wall);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.page {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: clamp(1.2rem, 4vw, 2.5rem) max(16px, 3vw) 4rem;
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+}
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span><svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg></span></div>
-							<h2>Nilabjo Dey</h2>
-							<p>Graduate student, MS Computer Science @ Purdue WL | Software Engineer </p>
-						</div>
-					</section>
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.label {
+  font-family: var(--flapface); font-weight: 600; font-size: 0.85rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+}
+.sound {
+  font-family: var(--flapface); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase;
+  background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 999px;
+  padding: 0.4rem 0.85rem; cursor: pointer; display: inline-flex; gap: 0.5rem; align-items: center;
+}
+.sound:hover { color: var(--ink); border-color: var(--line-strong); }
+.sound .dot { width: 7px; height: 7px; border-radius: 50%; background: #3a3936; }
+.sound[aria-pressed="true"] { color: var(--ink); }
+.sound[aria-pressed="true"] .dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+/* ---------- The board ---------- */
+.housing {
+  background: linear-gradient(180deg, #121212, var(--housing));
+  border-radius: clamp(6px, 1.2vw, 14px);
+  padding: clamp(10px, 3.2%, 40px) clamp(8px, 2.6%, 34px);
+  box-shadow:
+    0 40px 80px -20px rgba(0, 0, 0, 0.8),
+    0 2px 0 rgba(255, 255, 255, 0.03) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+.grid {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(22, minmax(0, 1fr));
+  gap: clamp(2px, 0.55cqw, 7px) clamp(1.5px, 0.4cqw, 5px);
+}
+.t { position: relative; aspect-ratio: 5 / 7; perspective: 260px; }
+.h {
+  position: absolute; left: 0; right: 0; height: 50%; overflow: hidden;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  background: var(--flap);
+}
+.h.top { top: 0; border-radius: 2px 2px 0 0; transform-origin: 50% 100%; }
+.h.bot { bottom: 0; border-radius: 0 0 2px 2px; transform-origin: 50% 0; background: var(--flap-lo); }
+.h.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: rgba(0, 0, 0, 0.7); }
+.h.flip-b { transform: rotateX(90deg); }
+.h span {
+  position: absolute; left: 0; right: 0; height: 200%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--flapface); font-weight: 600;
+  font-size: calc(100cqw / 22 * 0.78);
+  line-height: 1; color: var(--ink);
+}
+.h.top span { top: 0; }
+.h.bot span { bottom: 0; }
+.h[data-c="R"] { background: var(--red); }
+.h[data-c="O"] { background: var(--orange); }
+.h[data-c="Y"] { background: var(--yellow); }
+.h[data-c="G"] { background: var(--green); }
+.h[data-c="B"] { background: var(--blue); }
+.h[data-c="V"] { background: var(--violet); }
+.h[data-c="W"] { background: var(--white); }
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/recent_portrait.jpeg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">About me</h2>
-										<blockquote>Hi, I am a graduate student in the CS department at Purdue West Lafayette. In the past, I have dabbled in hardware-based ML, Computer Vision and Databases. I used to work at Oracle as an MTS in its Large Object Storage team. Currently on the lookout for Summer 2024 internships </blockquote>
-										<a href="https://drive.google.com/file/d/1YMm-_HJ4eE6lc0Rf1a58SIclZZrhxSPK/view?usp=sharing" class="special">View Full Resume</a>
-									</div>
-								</div>
-							</section>
+/* ---------- Keys ---------- */
+.keys { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+.key {
+  --k: var(--white);
+  font-family: var(--flapface); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); background: #1b1a19; border: 1px solid var(--line); border-radius: 8px;
+  padding: 0.65rem 1rem 0.65rem 0.8rem; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.65rem;
+  box-shadow: 0 2px 0 #0a0a0a;
+  transition: transform .08s ease, border-color .2s ease, background-color .2s ease;
+}
+.key:hover { border-color: var(--line-strong); }
+.key:active { transform: translateY(2px); box-shadow: none; }
+.chip { display: inline-block; width: 10px; height: 14px; border-radius: 2px; background: var(--k); flex: none; }
+.key .chip { opacity: 0.35; transition: opacity .2s ease; }
+.key[aria-current="true"] { background: #232220; border-color: var(--line-strong); }
+.key[aria-current="true"] .chip { opacity: 1; }
+[data-s="home"] { --k: var(--white); }
+[data-s="about"] { --k: var(--yellow); }
+[data-s="work"] { --k: var(--orange); }
+[data-s="research"] { --k: var(--blue); }
+[data-s="contact"] { --k: var(--green); }
+:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
-						<!-- Two -->
-							<section id="Education" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><svg xmlns="http://www.w3.org/2000/svg" height="298.24" width="298.24" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg></a>
-									<div class="content">
-										<h2 class="major">Education</h2>
-										<!-- <ul class="action">
-											<li>Purdue University, West Lafayette, IN<br>
-												Master of Science<br>Computer Science</li>
-											<li>Indian Institute of Technology(IIT) Delhi, India<br>
-													Bachelor of Technology<br>Electrical Engineering</li>
-										</ul> -->
-										<div class="education-list">
-											<div class="education-item">
-												<div class="college-info">
-													<h3>Purdue University, West Lafayette, IN</h3>
-													<p>Master of Science, Computer Science</p>
-												</div>
-												<div class="college-dates">
-													<p>2023-</p>
-												</div>
-											</div>
-											<div class="education-item">
-												<div class="college-info">
-													<h3>Indian Institute of Technology (IIT) Delhi, India</h3>
-													<p>Bachelor of Technology, Electrical Engineering</p>
-												</div>
-												<div class="college-dates">
-													<p>2017-2021</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</section>
+/* ---------- Detail panel: the printed timetable beside the board ---------- */
+.pane { display: grid; gap: 2.4rem; padding-top: 0.6rem; }
+.pane[hidden] { display: none; }
+.pane-head { display: flex; align-items: center; gap: 0.7rem; padding-bottom: 0.9rem; border-bottom: 2px solid var(--line-strong); }
+.pane-head h2 { margin: 0; font-family: var(--flapface); font-weight: 600; font-size: 1.05rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.pane-head .sub { margin-left: auto; font-family: var(--flapface); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 
-						<!-- Three -->
-							<section id="Experience" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/noun-web-developer.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Experience</h2>
-										<ul class="action">
-										<li>
-										<h3 class="major">Member of Technical Staff, Oracle Database(Oct,2022-Jul,2023)</h3>
-											<ul class="action">
-												<li>Involved in the maintenance and development of large object storage  in the Oracle database to improve reliability and performance</li>
-												<li>Developed and implemented a novel algorithm for a new compression advisor reducing space usage and time taken by up to 80%</li>
-												<li>Responsible for development of security infrastructure, including a new transpiler for a new Backend-as-a-Service related product</li>
-											</ul>
-										</li>
-										<li>
-											<h3 class="major">Applications Engineer, Oracle Fusion ERP Cloud(Jul,2021-Oct,2022)</h3>
-											<ul class="action">
-												<li>Designed and implemented the frontend and backend of next-gen exception management service using VBCS and Java</li>
-												<li>Developed and tested prototypes of next-gen cloud-native microservices-based Payables product using internal frameworks</li>
-												<li>Wrote unit tests and resolved bugs in codebase: created unit tests and worked on fixing bugs to ensure reliability and stability</li>
-											</ul>
-										</li>
-										</ul>
-										<!-- <a href="#" class="special">Learn more</a> -->
-									</div>
-								</div>
-							</section>
+.lede { margin: 0; font-size: clamp(1.25rem, 1rem + 0.9vw, 1.6rem); line-height: 1.4; max-width: 40ch; text-wrap: pretty; }
+.prose { max-width: 64ch; display: grid; gap: 1em; }
+.prose p { margin: 0; color: #d9d4ca; }
+.hint { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
-							<section id="Research & Publications" class = "wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/chemistry.png" alt="" /></a>
-									<div class ="content">
-										<h2 class="major">Research and Publications</h2>
-										<ul class="action">
-											<li>
-												<div class="education-item">
-													<div class="college-info">
-														<h3>On-chip learning in a conventional silicon MOSFET based Analog Hardware Neural Network
-														</h3>
-														<p>IEEE Biomedical Circuits and Systems Conference (BioCAS), 2019</p>
-													</div>
-													
-												</div>
-											</li>
-											<li>
-												<div class="education-item">
-													<div class="college-info">
-														<h3>
-															Reduction of the Weight-Decay Rate of Volatile Memory Synapses in an Analog Hardware Neural Network for Accurate and Scalable On-Chip Learning
-														</h3>
-														<p>ACM International Conference on Neuromorphic Systems, 2020</p>
-													</div>
-													
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</section>
+h3.sec {
+  margin: 0 0 0.2rem; font-family: var(--flapface); font-weight: 600; font-size: 0.85rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+}
 
-							<section id="Technical Skills" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Technical skills</h2>
-										<ul class="action">
-											<li>Languages: C, C++, Java, Python, SQL</li>
-											<li>Frameworks: Django, Flask, Keras, Tensorflow, JUnit, JMockit, Materialize</li>
-										</ul>
-									</div>
-								</div>
-							</section>
+/* Facts strip */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 0; border-top: 1px solid var(--line); }
+.facts div { padding: 0.9rem 1rem 0.9rem 0; border-bottom: 1px solid var(--line); }
+.facts dt { font-family: var(--flapface); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0.25rem 0 0; }
+@media (max-width: 760px) { .facts { grid-template-columns: 1fr 1fr; } }
 
-						<!-- Four -->
-							<!-- <section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
+/* Timetable rows */
+.tt { display: grid; }
+.tt-head, .tt-row > summary, .tt-static {
+  display: grid;
+  grid-template-columns: var(--cols);
+  gap: 1rem; align-items: baseline;
+}
+.tt-head {
+  padding-bottom: 0.5rem; border-bottom: 1px solid var(--line-strong);
+  font-family: var(--flapface); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+}
+.tt-row { border-bottom: 1px solid var(--line); }
+.tt-row > summary, .tt-static { padding-block: 1rem; list-style: none; }
+.tt-row > summary { cursor: pointer; }
+.tt-row > summary::-webkit-details-marker { display: none; }
+.tt-row > summary:hover .dest { color: #fff; }
+.when { font-family: var(--flapface); font-weight: 500; font-size: 1.02rem; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; color: var(--muted); }
+.dest { font-family: var(--flapface); font-weight: 600; font-size: 1.3rem; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.15; }
+.dest small { display: block; font-family: var(--body); font-weight: 400; font-size: 0.95rem; letter-spacing: 0; text-transform: none; color: var(--muted); margin-top: 0.15rem; }
+.role { color: #d9d4ca; }
+.status {
+  justify-self: end; display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--flapface); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+}
+.status.now { color: var(--ink); }
+.status.now::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
+.tog { font-family: var(--flapface); color: var(--muted); font-size: 1.1rem; transition: transform .2s ease; display: inline-block; justify-self: end; }
+.tt-row[open] .tog { transform: rotate(45deg); }
+.more { padding: 0 0 1.2rem; display: grid; grid-template-columns: var(--cols); gap: 1rem; }
+.more > div { grid-column: 2 / -1; max-width: 70ch; }
+.more ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.35rem; color: #d9d4ca; }
+.more li::marker { color: var(--k, var(--orange)); }
+.more p { margin: 0; color: #d9d4ca; }
+.more a, .pane a { color: var(--ink); text-underline-offset: 3px; }
 
-					</section> -->
+.tt.work { --cols: 9.5rem minmax(0, 1.3fr) minmax(0, 1fr) 7.5rem 1.2rem; }
+.tt.edu { --cols: 9.5rem minmax(0, 1.3fr) minmax(0, 1fr) 7.5rem; }
+.tt.pubs { --cols: 9.5rem 8rem minmax(0, 1fr) 1.2rem; }
+.tt.proj { --cols: 9.5rem minmax(0, 1fr) 1.2rem; }
+.tt.pubs .dest, .tt.proj .dest { font-size: 1.15rem; letter-spacing: 0.05em; }
+.venue { font-family: var(--flapface); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); filter: brightness(1.35); }
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<!-- <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p> -->
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Apt 16<br />
-									915 North 6th Street<br />
-									Lafayette, IN 47904
-								</li>
-								<li class="icon solid fa-phone">+91 8777853448</li>
-								<li class="icon solid fa-envelope"><a href="emailto:dey33@purdue.edu">dey33@purdue.edu</a></li>
-								<li class="icon brands fa-twitter"><a href="https://twitter.com/dey_nilabjo">https://twitter.com/dey_nilabjo</a></li>
-								<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/nilabjo-dey">https://www.linkedin.com/in/nilabjo-dey</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+@media (max-width: 760px) {
+  .tt-head { display: none; }
+  .tt.work, .tt.edu, .tt.pubs, .tt.proj { --cols: 1fr auto; }
+  .tt-row > summary, .tt-static { grid-template-columns: 1fr auto; row-gap: 0.25rem; }
+  .tt-row > summary > *, .tt-static > * { grid-column: 1; }
+  .tt-row > summary > .when, .tt-static > .when { grid-row: 1; }
+  .tt-row > summary > .status, .tt-row > summary > .tog, .tt-static > .status { grid-column: 2; grid-row: 1; }
+  .tt-row > summary > .status + .tog { display: none; }
+  .more { grid-template-columns: 1fr; }
+  .more > div { grid-column: 1; }
+}
 
-			</div>
+.skills { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; margin: 0.6rem 0 0; padding: 0; }
+.skills li {
+  font-family: var(--flapface); font-weight: 500; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase;
+  border: 1px solid var(--line-strong); border-radius: 4px; padding: 0.3rem 0.6rem; color: #d9d4ca;
+}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+/* Contact */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 820px) { .contact { grid-template-columns: 1fr; } }
+.email { display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem; margin: 0.4rem 0 0; font-family: var(--flapface); font-weight: 600; font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem); letter-spacing: 0.06em; }
+.email a { overflow-wrap: anywhere; }
+.btn-line {
+  font-family: var(--flapface); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink); background: transparent; cursor: pointer; border: 1px solid var(--line-strong); border-radius: 999px; padding: 0.3rem 0.75rem;
+}
+.btn-line:hover { border-color: var(--green); }
+.links { display: flex; flex-wrap: wrap; gap: 1.3rem; margin: 1.4rem 0 0; font-family: var(--flapface); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.9rem; }
+.form { display: grid; gap: 1rem; border-top: 2px solid var(--line-strong); padding-top: 1.2rem; }
+.field { display: grid; gap: 0.35rem; }
+.field label { font-family: var(--flapface); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.field input, .field textarea {
+  font: inherit; color: var(--ink); width: 100%; background: #121110;
+  border: 1px solid var(--line-strong); border-radius: 4px; padding: 0.7rem 0.8rem;
+}
+.field textarea { resize: vertical; min-height: 8rem; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(18, 160, 92, 0.25); }
+.field [aria-invalid="true"] { border-color: var(--red); }
+.honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.send {
+  font-family: var(--flapface); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.18em; text-transform: uppercase;
+  background: var(--green); color: #07150e; border: 0; border-radius: 6px; padding: 0.75rem 1.2rem; cursor: pointer;
+}
+.send[disabled] { opacity: 0.6; cursor: progress; }
+.form-status { margin: 0; font-size: 0.98rem; color: var(--muted); }
+.form-status.ok { color: var(--ink); }
+.form-status.err { color: #ff8a80; }
 
-	</body>
+[hidden] { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 560px) {
+  .key { font-size: 0.8rem; letter-spacing: 0.12em; padding: 0.55rem 0.75rem 0.55rem 0.65rem; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bar">
+    <span class="label">Nilabjo Dey</span>
+    <button class="sound" id="sound" type="button" aria-pressed="false"><span class="dot"></span>Sound off</button>
+  </div>
+
+  <div class="housing">
+    <div class="grid" id="grid" aria-hidden="true"></div>
+  </div>
+  <p class="sr" id="board-text" aria-live="polite"></p>
+
+  <nav class="keys" aria-label="Sections">
+    <button class="key" type="button" data-s="home"><span class="chip"></span>Home</button>
+    <button class="key" type="button" data-s="about"><span class="chip"></span>About</button>
+    <button class="key" type="button" data-s="work"><span class="chip"></span>Work</button>
+    <button class="key" type="button" data-s="research"><span class="chip"></span>Research</button>
+    <button class="key" type="button" data-s="contact"><span class="chip"></span>Contact</button>
+  </nav>
+
+  <!-- HOME -->
+  <section class="pane" data-s="home" aria-labelledby="h-home">
+    <div class="pane-head"><span class="chip"></span><h2 id="h-home">Nilabjo Dey</h2><span class="sub">Redwood Shores, CA</span></div>
+    <p class="lede">Software engineer on Oracle AI Vector Search. I work on how vectors get compressed, indexed and searched inside the database.</p>
+    <dl class="facts">
+      <div><dt>Now</dt><dd>Oracle AI Vector Search</dd></div>
+      <div><dt>Before</dt><dd>AWS Redshift, Oracle India</dd></div>
+      <div><dt>Studied</dt><dd>Purdue (MS CS), IIT Delhi (B.Tech EE)</dd></div>
+      <div><dt>Published</dt><dd>NeurIPS 2025, ICONS 2020, BioCAS 2019</dd></div>
+    </dl>
+    <p class="hint">Press a key above to flip the board.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="pane" data-s="about" aria-labelledby="h-about" hidden>
+    <div class="pane-head"><span class="chip"></span><h2 id="h-about">About</h2></div>
+    <div class="prose">
+      <p>I'm a software engineer at Oracle in Redwood Shores, where I own the scalar-quantized IVF vector indexes behind Oracle AI Vector Search. I work on how vectors are compressed, built into indexes and rescored at query time, and I follow new quantization research like TurboQuant and RaBitQ to see what belongs in future IVF and HNSW indexes.</p>
+      <p>Before this I did my MS in Computer Science at Purdue, where I worked on reinforcement learning for LLM reasoning. I've also interned at AWS on Redshift, spent two years on storage features and backend services at Oracle in India, and studied electrical engineering at IIT Delhi, where my first paper was about training neural networks on analog hardware.</p>
+    </div>
+    <div>
+      <h3 class="sec">Education</h3>
+      <div class="tt edu">
+        <div class="tt-head"><span>Dates</span><span>School</span><span>Degree</span><span style="justify-self:end">GPA</span></div>
+        <div class="tt-row"><div class="tt-static">
+          <span class="when">2023 – 2025</span>
+          <span class="dest">Purdue University<small>West Lafayette, Indiana</small></span>
+          <span class="role">MS, Computer Science</span>
+          <span class="status">4.0 / 4.0</span>
+        </div></div>
+        <div class="tt-row"><div class="tt-static">
+          <span class="when">2017 – 2021</span>
+          <span class="dest">IIT Delhi<small>New Delhi, India</small></span>
+          <span class="role">B.Tech, Electrical Engineering</span>
+          <span class="status">3.79 / 4.0</span>
+        </div></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">Toolbox</h3>
+      <ul class="skills">
+        <li>C++</li><li>C</li><li>Java</li><li>Python</li><li>SQL</li><li>OCaml</li>
+        <li>Vector indexes</li><li>Storage engines</li><li>Latches &amp; lock-free</li><li>Paxos &amp; Raft</li>
+        <li>PyTorch</li><li>RL post-training</li><li>AWS</li><li>Docker</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="pane" data-s="work" aria-labelledby="h-work" hidden>
+    <div class="pane-head"><span class="chip"></span><h2 id="h-work">Work · Departures</h2><span class="sub">Tap a row for details</span></div>
+    <div class="tt work">
+      <div class="tt-head"><span>Dates</span><span>Company</span><span>Role</span><span style="justify-self:end">Status</span><span></span></div>
+      <details class="tt-row" open>
+        <summary>
+          <span class="when">Jun 2025 – now</span>
+          <span class="dest">Oracle<small>Redwood Shores, California</small></span>
+          <span class="role">Software Engineer</span>
+          <span class="status now">Now</span>
+          <span class="tog" aria-hidden="true">+</span>
+        </summary>
+        <div class="more"><div><ul>
+          <li>Own scalar-quantized IVF vector indexes for Oracle AI Vector Search: about 75% less memory and 50% faster builds at the same recall.</li>
+          <li>Built query-time rescoring and a latch-protected quantization metadata cache shared by index build and query execution.</li>
+          <li>Prototype techniques from new quantization research (TurboQuant, RaBitQ) for future IVF and HNSW indexes.</li>
+          <li>Maintain the LOB storage engine, including a fix for a race between concurrent LOB access and a cross-session truncate.</li>
+        </ul></div></div>
+      </details>
+      <details class="tt-row">
+        <summary>
+          <span class="when">May – Aug 2024</span>
+          <span class="dest">Amazon Web Services<small>Seattle, Washington</small></span>
+          <span class="role">Software Engineer Intern</span>
+          <span class="status">Departed</span>
+          <span class="tog" aria-hidden="true">+</span>
+        </summary>
+        <div class="more"><div><ul>
+          <li>Built an automated root-cause analysis tool for Redshift cluster failures during creation, deletion and patching.</li>
+          <li>Built a RAG pipeline that gives on-call engineers LLM-drafted resolution steps and triage information.</li>
+        </ul></div></div>
+      </details>
+      <details class="tt-row">
+        <summary>
+          <span class="when">Oct 2022 – Aug 2023</span>
+          <span class="dest">Oracle<small>Bangalore, India</small></span>
+          <span class="role">Software Engineer</span>
+          <span class="status">Departed</span>
+          <span class="tog" aria-hidden="true">+</span>
+        </summary>
+        <div class="more"><div><ul>
+          <li>Built a sampling-based compression advisor for BasicFile and SecureFile LOBs that estimates savings without converting the full dataset, cutting analysis time by up to 80%.</li>
+          <li>Wrote a lex-yacc transpiler from Firebase Security Rules to SQL access-control rules, and designed the storage and enforcement layers of a backend-as-a-service product.</li>
+        </ul></div></div>
+      </details>
+      <details class="tt-row">
+        <summary>
+          <span class="when">Jul 2021 – Oct 2022</span>
+          <span class="dest">Oracle<small>Hyderabad, India</small></span>
+          <span class="role">Software Engineer</span>
+          <span class="status">Departed</span>
+          <span class="tog" aria-hidden="true">+</span>
+        </summary>
+        <div class="more"><div><ul>
+          <li>Split the Fusion Payables monolith into microservices and defined their API contracts.</li>
+          <li>Built a service and admin dashboard for flagging and resolving payables exceptions.</li>
+          <li>Added usage and failure-rate metrics to a unified telemetry dashboard for load testing.</li>
+        </ul></div></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="pane" data-s="research" aria-labelledby="h-research" hidden>
+    <div class="pane-head"><span class="chip"></span><h2 id="h-research">Research</h2><span class="sub">Tap a row for details</span></div>
+    <div>
+      <h3 class="sec">Publications</h3>
+      <div class="tt pubs">
+        <div class="tt-head"><span>Year</span><span>Venue</span><span>Title</span><span></span></div>
+        <details class="tt-row">
+          <summary>
+            <span class="when">2025</span>
+            <span class="venue">NeurIPS</span>
+            <span class="dest">Revisiting Reinforcement Learning for LLM Reasoning from a Cross-Domain Perspective</span>
+            <span class="tog" aria-hidden="true">+</span>
+          </summary>
+          <div class="more"><div>
+            <p>Z. Cheng, S. Hao, T. Liu, F. Zhou, Y. Xie, F. Yao, Y. Bian, <strong>N. Dey</strong>, et al. Datasets &amp; Benchmarks Track. Introduces Guru, a 92K-example RL reasoning corpus across six domains. <a href="https://github.com/LLM360/Guru" target="_blank" rel="noopener">Guru on GitHub ↗</a></p>
+          </div></div>
+        </details>
+        <details class="tt-row">
+          <summary>
+            <span class="when">2020</span>
+            <span class="venue">ICONS</span>
+            <span class="dest">Reduction of the Weight-Decay Rate of Volatile Memory Synapses in an Analog Hardware Neural Network for Accurate and Scalable On-Chip Learning</span>
+            <span class="tog" aria-hidden="true">+</span>
+          </summary>
+          <div class="more"><div><p>ACM International Conference on Neuromorphic Systems.</p></div></div>
+        </details>
+        <details class="tt-row">
+          <summary>
+            <span class="when">2019</span>
+            <span class="venue">BioCAS</span>
+            <span class="dest">On-chip Learning in a Conventional Silicon MOSFET Based Analog Hardware Neural Network</span>
+            <span class="tog" aria-hidden="true">+</span>
+          </summary>
+          <div class="more"><div><p><strong>N. Dey</strong>, et al. IEEE Biomedical Circuits and Systems Conference. From my B.Tech thesis at IIT Delhi: backpropagation and on-chip training with MOSFET-based synapses.</p></div></div>
+        </details>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">Projects</h3>
+      <div class="tt proj">
+        <div class="tt-head"><span>Dates</span><span>Project</span><span></span></div>
+        <details class="tt-row">
+          <summary>
+            <span class="when">2024 – 2025</span>
+            <span class="dest">Teaching LLMs to reason with synthetic data<small>Purdue · LLM360</small></span>
+            <span class="tog" aria-hidden="true">+</span>
+          </summary>
+          <div class="more"><div><p>Designed domain-specific reward functions and generated synthetic Zebra-puzzle data for Guru. Built a pipeline that generates morphology, world-model and natural-language proofs as training data, then post-trained models with PPO, GRPO and DPO.</p></div></div>
+        </details>
+        <details class="tt-row">
+          <summary>
+            <span class="when">Spring 2024</span>
+            <span class="dest">Safer code generation<small>Purdue</small></span>
+            <span class="tog" aria-hidden="true">+</span>
+          </summary>
+          <div class="more"><div><p>Fine-tuned StarCoder with vulnerability detection as the RL signal, using a reward that blends CodeBLEU and BERTScore so security gains don't cost correctness.</p></div></div>
+        </details>
+        <details class="tt-row">
+          <summary>
+            <span class="when">Spring 2024</span>
+            <span class="dest">Sharded key-value store on Paxos<small>Purdue</small></span>
+            <span class="tog" aria-hidden="true">+</span>
+          </summary>
+          <div class="more"><div><p>A linearizable, fault-tolerant key-value store with distributed transactions. A Paxos-backed shard master rebalances load by moving shards between replica groups.</p></div></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="pane" data-s="contact" aria-labelledby="h-contact" hidden>
+    <div class="pane-head"><span class="chip"></span><h2 id="h-contact">Contact</h2></div>
+    <div class="contact">
+      <div>
+        <h3 class="sec">Email</h3>
+        <p class="email"><a href="mailto:nilabjodey99@gmail.com">nilabjodey99@gmail.com</a><button class="btn-line" type="button" id="copy">Copy</button></p>
+        <p class="links">
+          <a href="https://www.linkedin.com/in/nilabjo-dey/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/nilabjodey" target="_blank" rel="noopener">GitHub ↗</a>
+        </p>
+      </div>
+      <form class="form" id="contact-form" novalidate>
+        <h3 class="sec">Or send a message</h3>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Your email</label><input id="f-email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-message">Message</label><textarea id="f-message" rows="5" required></textarea></div>
+        <input type="text" id="f-honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-foot">
+          <button class="send" id="f-send" type="submit">Send message</button>
+          <p class="form-status" id="f-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const COLS = 22, ROWS = 6;
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Flap order on the drum: blank, letters, digits, punctuation, then color tiles.
+  const SEQ = [..." ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$()-+&=;:'\"%,./?°", "{R}", "{O}", "{Y}", "{G}", "{B}", "{V}", "{W}"];
+  const pos = new Map(SEQ.map((v, i) => [v, i]));
+
+  const tokens = (s) => s.match(/\{[ROYGBVW]\}|./g) || [];
+  const row = (s) => { const t = tokens(s).slice(0, COLS); while (t.length < COLS) t.push(" "); return t; };
+  const C = (s) => { const n = tokens(s).length, l = Math.floor((COLS - n) / 2); return " ".repeat(Math.max(0, l)) + s; };
+  const J = (l, r) => l + " ".repeat(Math.max(1, COLS - tokens(l).length - tokens(r).length)) + r;
+
+  const MESSAGES = {
+    home: ["", C("NILABJO DEY"), "", C("SOFTWARE ENGINEER"), "VECTOR SEARCH @ ORACLE", C("{R}{O}{Y}{G}{B}{V}")],
+    about: ["{Y} ABOUT", "", C("HI, I'M NILABJO"), "", C("I BUILD VECTOR SEARCH"), ""],
+    work: [J("{O} WORK", "UNTIL"), "", J("ORACLE  REDWOOD", "NOW"), J("AWS     SEATTLE", "2024"), J("ORACLE  BANGALORE", "2023"), J("ORACLE  HYDERABAD", "2022")],
+    research: ["{B} RESEARCH", "", J("NEURIPS LLM RL", "2025"), J("ICONS   ANALOG NN", "2020"), J("BIOCAS  MOSFET NN", "2019"), ""],
+    contact: ["{G} CONTACT", "", C("SAY HELLO"), "", "NILABJODEY99@GMAIL.COM", ""],
+  };
+
+  /* ---------- Build tiles ---------- */
+  const grid = document.getElementById("grid");
+  const tiles = [];
+  for (let i = 0; i < ROWS * COLS; i++) {
+    const t = document.createElement("div");
+    t.className = "t";
+    t.innerHTML = '<div class="h top"><span></span></div><div class="h bot"><span></span></div><div class="h top"><span></span></div><div class="h bot flip-b"><span></span></div>';
+    grid.appendChild(t);
+    const [sTop, sBot, fA, fB] = t.children;
+    tiles.push({ sTop, sBot, fA, fB, v: " ", run: 0 });
+  }
+
+  const paint = (half, v) => {
+    const color = v.length === 3 ? v[1] : "";
+    if (color) half.dataset.c = color; else delete half.dataset.c;
+    half.firstChild.textContent = color ? "" : v;
+  };
+  const setStatic = (tile, v) => { paint(tile.sTop, v); paint(tile.sBot, v); paint(tile.fA, v); tile.v = v; };
+
+  /* ---------- Sound (synthesised clack, off by default) ---------- */
+  let audio = null, soundOn = false, lastClack = 0, noise = null;
+  function clack() {
+    if (!soundOn || !audio) return;
+    const now = audio.currentTime;
+    if (now - lastClack < 0.014) return;
+    lastClack = now;
+    const src = audio.createBufferSource();
+    src.buffer = noise;
+    const bp = audio.createBiquadFilter();
+    bp.type = "bandpass"; bp.frequency.value = 1400 + Math.random() * 1600; bp.Q.value = 1.4;
+    const g = audio.createGain();
+    g.gain.setValueAtTime(0.09, now);
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+    src.connect(bp).connect(g).connect(audio.destination);
+    src.start(now);
+  }
+  const soundBtn = document.getElementById("sound");
+  soundBtn.addEventListener("click", () => {
+    if (!audio) {
+      audio = new (window.AudioContext || window.webkitAudioContext)();
+      noise = audio.createBuffer(1, Math.round(audio.sampleRate * 0.03), audio.sampleRate);
+      const d = noise.getChannelData(0);
+      for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 3);
+    }
+    audio.resume();
+    soundOn = !soundOn;
+    soundBtn.setAttribute("aria-pressed", String(soundOn));
+    soundBtn.lastChild.textContent = soundOn ? "Sound on" : "Sound off";
+  });
+
+  /* ---------- Flipping ---------- */
+  const STEP = 64;      // ms per flap
+  const MAX_STEPS = 12; // long trips skip ahead so a new message settles in about a second
+
+  function flipOnce(tile, from, to) {
+    paint(tile.sTop, to);
+    paint(tile.fA, from);
+    paint(tile.fB, to);
+    const a = tile.fA.animate([{ transform: "rotateX(0deg)" }, { transform: "rotateX(-90deg)" }],
+      { duration: STEP / 2, easing: "ease-in", fill: "forwards" });
+    const b = tile.fB.animate([{ transform: "rotateX(90deg)" }, { transform: "rotateX(0deg)" }],
+      { duration: STEP / 2, delay: STEP / 2, easing: "ease-out", fill: "forwards" });
+    clack();
+    return b.finished.then(() => {
+      paint(tile.sBot, to);
+      paint(tile.fA, to);
+      a.cancel(); b.cancel();
+      tile.v = to;
+    });
+  }
+
+  async function flipTo(tile, target, delay) {
+    const run = ++tile.run;
+    if (tile.v === target) return;
+    if (reduceMotion) { setStatic(tile, target); return; }
+    await new Promise((r) => setTimeout(r, delay));
+    let i = pos.get(tile.v) ?? 0;
+    const end = pos.get(target) ?? 0;
+    let dist = (end - i + SEQ.length) % SEQ.length;
+    if (dist > MAX_STEPS) { i = (end - MAX_STEPS + SEQ.length) % SEQ.length; dist = MAX_STEPS; }
+    let from = tile.v;
+    for (let s = 0; s < dist; s++) {
+      if (run !== tile.run) return;
+      i = (i + 1) % SEQ.length;
+      const to = SEQ[i];
+      await flipOnce(tile, from, to).catch(() => {});
+      from = to;
+    }
+  }
+
+  const keys = [...document.querySelectorAll(".key")];
+  const panes = [...document.querySelectorAll(".pane")];
+  const boardText = document.getElementById("board-text");
+  let settleTimer = 0;
+
+  function show(section) {
+    const lines = MESSAGES[section].map(row);
+    lines.forEach((r, y) => r.forEach((v, x) => flipTo(tiles[y * COLS + x], v, x * 22 + y * 10 + Math.random() * 90)));
+    // Safety net: if a background tab or a slow device throttled the flips, snap to the final message.
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(() => lines.forEach((r, y) => r.forEach((v, x) => {
+      const tile = tiles[y * COLS + x];
+      if (tile.v !== v) { tile.run++; tile.fA.getAnimations().concat(tile.fB.getAnimations()).forEach((an) => an.cancel()); setStatic(tile, v); }
+    })), 2600);
+    keys.forEach((k) => k.setAttribute("aria-current", String(k.dataset.s === section)));
+    panes.forEach((p) => { p.hidden = p.dataset.s !== section; });
+    boardText.textContent = MESSAGES[section].map((l) => l.replace(/\{[A-Z]\}/g, "").trim()).filter(Boolean).join(". ");
+  }
+
+  keys.forEach((k) => k.addEventListener("click", () => {
+    const s = k.dataset.s;
+    if (location.hash !== "#" + s) history.replaceState(null, "", "#" + s);
+    show(s);
+  }));
+
+  // Open on the finished message so the first frame is readable, then let a few flaps settle into place.
+  const start = (location.hash.slice(1) in MESSAGES) ? location.hash.slice(1) : "home";
+  const startLines = MESSAGES[start].map(row);
+  tiles.forEach((tile, n) => {
+    const target = startLines[Math.floor(n / COLS)][n % COLS];
+    const back = target === " " ? 0 : 1 + Math.floor(Math.random() * 5);
+    setStatic(tile, SEQ[(pos.get(target) - back + SEQ.length) % SEQ.length]);
+  });
+  show(start);
+
+  /* ---------- Copy email ---------- */
+  const copy = document.getElementById("copy");
+  copy.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText("nilabjodey99@gmail.com"); copy.textContent = "Copied"; }
+    catch { copy.textContent = "Select to copy"; }
+    setTimeout(() => (copy.textContent = "Copy"), 1800);
+  });
+
+  /* ---------- Contact form → email via FormSubmit ---------- */
+  const ENDPOINT = "https://formsubmit.co/ajax/nilabjodey99@gmail.com";
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("f-status");
+  const send = document.getElementById("f-send");
+  const fName = document.getElementById("f-name");
+  const fEmail = document.getElementById("f-email");
+  const fMessage = document.getElementById("f-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = fName.value.trim(), email = fEmail.value.trim(), message = fMessage.value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const missing = [];
+    fName.setAttribute("aria-invalid", String(!name)); if (!name) missing.push("your name");
+    fEmail.setAttribute("aria-invalid", String(!emailOk)); if (!emailOk) missing.push("a valid email");
+    fMessage.setAttribute("aria-invalid", String(!message)); if (!message) missing.push("a message");
+    if (missing.length) {
+      status.className = "form-status err";
+      status.textContent = `Add ${missing.join(", ")} so I can write back.`;
+      return;
+    }
+    if (document.getElementById("f-honey").value) return;
+    send.disabled = true; send.textContent = "Sending…";
+    status.className = "form-status"; status.textContent = "";
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ name, email, message, _subject: `Website message from ${name}`, _replyto: email, _template: "table", _captcha: "false" }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) !== "true") throw new Error(String(res.status));
+      form.reset();
+      status.className = "form-status ok";
+      status.textContent = "Sent. Thanks for writing, I'll reply soon.";
+    } catch {
+      status.className = "form-status err";
+      status.innerHTML = 'That didn\'t go through. Email me at <a href="mailto:nilabjodey99@gmail.com">nilabjodey99@gmail.com</a> instead.';
+    } finally {
+      send.disabled = false; send.textContent = "Send message";
+    }
+  });
+})();
+</script>
+
+</body>
 </html>
